@@ -13,7 +13,7 @@
     "express-session": "^1.16.2",
     "http-errors": "~1.6.3",
     "moment": "^2.24.0",
-    "mongodb": "^3.3.2",
+    "mongodb": "^3.6.2",
     "morgan": "~1.9.1",
     "multiparty": "^4.2.1",
     "nodemon": "^2.0.6"

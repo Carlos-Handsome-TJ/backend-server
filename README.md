@@ -2,7 +2,7 @@
 1.使用express脚手架搭建项目初始结构
 2.安装 mongodb数据库
 2.1启动本地数据库：
-    mongod dbpath "D:\mongodb\data\db"
+    mongod --dbpath D:\mongodb\data\db
 2.2连接数据库：
     mongo.exe
 2.3显示数据库：
@@ -11,7 +11,20 @@
     config 0.0000GB
     local 0.0000GB
     使用数据库： use ...(数据库名称)
-    创建数据库： use ...(数据库名称);创建数据库集合：db.createCollection("users");db.users.insertOne({name: "zhangsan"})
+    创建数据库： use ...(数据库名称);创建数据库集合：db.createCollection("users");
+    db.createCollection("users")
+    db.users.insertOne({name: "zhangsan"})
+    db.users.find()
+    > db.createCollection("users")
+        { "ok" : 1 }
+    > db.users.insertOne({name: "zhangsan"})
+        {
+            "acknowledged" : true,
+            "insertedId" : ObjectId("5fa3e2c0082764b1757eca95")
+        }
+    > db.users.find()
+        { "_id" : ObjectId("5fa3e2c0082764b1757eca95"), "name" : "zhangsan" }
+    >   
     删除本地数据库：db.dropDatabase()
 3.连接本地数据库
 4.路由开发
