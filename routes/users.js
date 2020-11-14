@@ -63,12 +63,13 @@ router.get('/logout', (req, res, next) => {
 router.get('/checkName', (req, res, next) => {
     const { username } = req.query
     if (!username) {
-        res.send({ code: 1, msg: "请输入用户名！" })
+        res.send({ code: 2, msg: "请输入用户名！" })
         return
     }
     Users.findOne({ username }, (err, docs) => {
         if (err) throw err
-        if (docs) res.send({ code: 1, msg: "用户名已注册！" })
+        if (docs) res.send({ code: 1, msg: "用户名已注册" })
+        else res.send({ code: 0, msg: "用户名可以使用" })
     })
 })
 
