@@ -14,13 +14,17 @@ const usersSchema = new Schema({
         trim: true,
         required: true,
     },
+    admin: {
+        type: Boolean,
+        default: false
+    },
     email: {
         type: String,
         required: true
     },
     create_time: {
         type: Date,
-        default: Date.now()
+        default: Date.now
     },
     avatar: {
         type: String,
